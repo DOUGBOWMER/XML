@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="XML_Example"></p>
+    <script>
+        var XML_PARSER, XML_DOCUMENTS;
+        // Creates a text string
+        var Customer = <customer> +
+        "<Firstname> Doug</Firstname>" +
+        "<Lastname> Bowmer</Lastname>" +
+        "<DOB>7-13-1987</DOB>" +
+         "<registeredDate> 01-05-2020</registeredDate>" +
+         "<lastPurcashe> 7005.56</lastPurchase>" +
+         "</customer>"; 
+
+         //creates and XML pareser 
+         XML_Parser = new DomParser();
+
+         //creates a new XML DOM object using the text 
+         XML_Document + XML_Parser.parser.parseFromString(Customer, "text/xml");
+
+        document.getElementById("XML_Example").innerHTML = 
+        XML_Document.getELementsByTagName("Firstname")[0].childNodes[0].nodeValue;
+
+    </script>
+</body>
+</html>
